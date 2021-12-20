@@ -1,0 +1,21 @@
+<aura:component 
+	description="Sample pre-chat component that uses Aura only when absolutely necessary"
+	implements="lightningsnapin:prechatUI">
+
+	<!-- Contains methods for getting pre-chat fields, starting a chat, and validating fields -->
+	<lightningsnapin:prechatAPI aura:id="prechatAPI"/>
+
+	<!-- After this component has rendered, call the controller's onRender function -->
+	<aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+
+	<div class="prechatUI">
+        Prechat Form
+		<div class="prechatFields">
+			<!-- Add pre-chat field HTML elements in the controller's onInit function -->
+		</div>
+		<button class="startChatButton" onclick="{!c.onStartButtonClick}">
+			Start Chat
+		</button>
+	</div>
+
+</aura:component>

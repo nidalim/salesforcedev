@@ -1,0 +1,145 @@
+<apex:page showHeader="false" >
+
+  <!-- This script takes the endpoint URL parameter passed from the deployment page and makes
+
+it the action for the form -->
+
+
+<style type='text/css'>
+
+form#prechatForm {
+    font-size: 1.2em;
+    top: 50px;
+    position: relative;
+}
+
+td.labelInput {
+    display: block;
+}
+
+td {
+    display: block;
+    padding: 5px;
+}
+
+input {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+input#prechat_submit {
+    border: none;
+    background-color: #0af;
+    color: white;
+    border-radius: 6px;
+    padding: 10px 15px;
+    cursor:pointer;
+}
+
+input#prechat_submit:hover {
+    background-color: #0198e4;
+}
+
+
+</style>
+
+
+  <script type="text/javascript">
+
+    (function() {
+
+    function handlePageLoad() {
+
+    var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+
+    document.getElementById('prechatForm').setAttribute('action',
+
+    decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+
+    } if (window.addEventListener) {
+
+    window.addEventListener('load', handlePageLoad, false);
+
+    } else { window.attachEvent('onload', handlePageLoad, false);
+
+    }})();
+
+  </script>
+
+
+
+  <form id="prechatForm" method="post">
+
+
+
+    <table align="center" cellspacing="5">
+
+      <tr>
+        <td class="labelInput">Name:</td>
+        <td>
+          <input name="liveagent.prechat:LastName" type="text" maxlength="50" id="prechat_lastname" style="formTextBox"/>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="labelInput">E-mail*:</td>
+        <td>
+          <input name="liveagent.prechat:Email" maxlength="50" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="prechat_email" style="formTextBox"/>
+          <!--Email Address: <input type='text' name='liveagent.prechat:EmailDetail' /><br />-->
+
+        </td>
+      </tr>
+
+
+      <tr>
+
+        <table cellpadding="0" cellspacing="10" align="center">
+
+          <tr>
+
+            <!--<td width="25%">&nbsp;</td>-->
+
+            <td>
+              <input type='submit' value='Request Chat' id='prechat_submit' />
+            </td>
+
+          </tr>
+
+        </table>
+
+      </tr>
+
+    </table>
+
+
+
+
+    <!-- Creates an auto-query for a matching Contact record’s Email field based on the
+
+value of the liveagent.prechat:Email field -->
+
+    <!--input type="hidden" name="liveagent.prechat.query:Email"
+
+value="Contact,Contact.Email" /-->
+
+<!-- Try to find the Contact by email (exact match) -->
+    <input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="Email,Email;LastName,LastName;" />
+    <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true;" />
+    <input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Contact" value="Email,true;" />
+    <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" /> 
+
+    <!-- specify that the created record should have email and last name on it -->   
+    <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="Email,true;LastName,true;" />
+
+    <!-- Save the Contact to the Lookup field on the Live Chat Transcript -->
+    <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="Contact" />
+
+
+
+    <input type="hidden" name="liveagent.prechat.save:name" value="CustomerName__c" />
+
+    <input type="hidden" name="liveagent.prechat.save:email" value="customer_Email__c" />
+
+  </form>
+
+</apex:page>

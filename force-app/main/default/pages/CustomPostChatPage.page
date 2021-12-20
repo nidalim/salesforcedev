@@ -1,0 +1,64 @@
+<apex:page showHeader="false">
+<style>
+body{
+	background: #43bfff;
+}
+#intertrader-logo{
+    background:#0E0E0E;
+}
+
+#intertrader-logo img{
+    border: 0;
+    height: 22px;
+    padding: 16px;
+}
+.postline{
+	background: #0e0e0e;
+    padding: 12px;
+    color: white;
+    text-align: center;
+}
+.postline-transcript{
+	background: #43bfff;
+    padding: 20px;
+}
+div#details {
+    background: #0e0e0e;
+    border-bottom: 1px solid #0e0e0e;
+}
+</style>
+<div id='details'>
+<div id="intertrader-logo">
+<apex:image id="intertrader-logo" value="https://www.intertrader.com/eu/wp-content/uploads/2017/11/intertrader-logo-white-optimize.png" alt="Intertrader"/>
+</div>   
+  
+
+      <div class="postline">Disconnected By:</div>
+      <div style="color:white; text-align:center;padding-bottom: 15px;"><apex:outputText value="{!$CurrentPage.parameters.disconnectedBy}" /></div>
+      <div class="postline-transcript"><span style="font-size:17px; font-weight:bold;display:block;text-align:center;">Transcript:</span><br/><apex:outputText value="{!$CurrentPage.parameters.transcript}" /></div>
+      
+
+</div>
+ 
+      
+      
+<!-- Message to show if chat is abandoned -->
+<div id='abandoned' style='display: none;'>
+
+    <p style="padding:12px">We are sorry you decided to leave the chat. Feel free to initiate a new session.</p>
+    
+</div>
+
+      
+ <!-- Code to decide if we show the abandoned block or the full data -->
+ <script type='text/javascript'>
+	 var requestTime = '{!$CurrentPage.parameters.requestTime}';
+	 var startTime = '{!$CurrentPage.parameters.startTime}';
+	 // when startTime doesn't have a value, it means the chat never started
+	 if (!startTime) {
+	       document.getElementById('details').style.display = 'none';
+	       document.getElementById('abandoned').style.display = 'block';
+	 }
+ </script>
+
+</apex:page>

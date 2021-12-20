@@ -1,0 +1,1122 @@
+<apex:page sidebar="false" showHeader="false" title="{!'Home'}" cache="false" applyHtmlTag="false" applyBodyTag="false">
+
+<html>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async='async' src="https://www.googletagmanager.com/gtag/js?id=UA-131457498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131457498-1');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W75RFVL');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>        
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W75RFVL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        
+<!--
+
+<a  href="javascript://Chat" onclick="liveagent.startChat('5735A000000khjv')">Start Chat</a>
+
+<script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('5735A000000khjv', document.getElementById('liveagent_button_online_5735A000000khjv')); });
+</script>
+
+<script type='text/javascript' src='https://c.la3-c1cs-was.salesforceliveagent.com/content/g/js/36.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.addCustomDetail('spacename', '%placeId%'); 
+liveagent.addCustomDetail('ctype', '%cust_type%'); 
+liveagent.addCustomDetail('orgid', '%orgid%'); 
+liveagent.init('https://d.la1-c2-iad.salesforceliveagent.com/chat', '5725A000000gVNz', '00D5A0000016ziV');
+</script>
+
+-->
+
+
+
+<!-- ****************************************************** SNAP IN CHAT ********************************************************* -->
+
+
+
+<!-- <script type="text/javascript">
+window.name = 'chatchat'
+</script>
+         
+<div id="liveagent_invite_button_5735A000000khjv" style="display:block;">
+<span style="cursor: pointer; width: 100px; height: 20px; padding: 5px; background-color: green; color: white;" onclick="liveagent.startChatWithWindow('5735A000000khjv','chatchat')">Start Chat</span>
+<span style="cursor: pointer; width: 100px; height: 20px; padding: 5px; background-color: red; color: white;" onclick="liveagent.rejectChat('5735A000000khjv')">Reject Chat</span>
+</div>
+ 
+<script type='text/javascript' src='https://c.la1-c2-iad.salesforceliveagent.com/content/g/js/44.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la1-c2-iad.salesforceliveagent.com/chat', '5725A000000gVNz', '00D5A0000016ziV');
+</script>
+
+
+    
+<style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #005290;
+        font-family: "Salesforce Sans", sans-serif;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #005290;
+    }
+    @font-face {
+        font-family: 'Salesforce Sans';
+        src: url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.woff') format('woff'),
+        url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.ttf') format('truetype');
+    }
+</style>
+ -->
+
+<!-- Start of Invitations -->
+
+<!-- <div class="embeddedServiceInvitation" id="snapins_invite" aria-live="assertive" role="dialog" aria-atomic="true">
+    <div class="embeddedServiceInvitationHeader" aria-labelledby="snapins_titletext" aria-describedby="snapins_bodytext">
+        <img id="embeddedServiceAvatar"></img>
+        <span class="embeddedServiceTitleText" id="snapins_titletext">How can we help you?</span>
+        <button type="button" id="closeInvite" class="embeddedServiceCloseIcon" aria-label="Exit invitation">&times;</button>
+    </div>
+    <div class="embeddedServiceInvitationBody">
+        <p id="snapins_bodytext">Intertrader support agent wants to chat with you</p>
+    </div>
+    <div class="embeddedServiceInvitationFooter" aria-describedby="snapins_bodytext">
+        <button type="button" class="embeddedServiceActionButton" id="rejectInvite">Close chat</button>
+        <button type="button" class="embeddedServiceActionButton" id="acceptInvite">Start Chat</button>
+    </div>
+</div>
+
+<style type='text/css'>
+    #snapins_invite { background-color: #FFFFFF; font-family: "Salesforce Sans", sans-serif; overflow: visible; border-radius: 8px; visibility: hidden; }
+    .embeddedServiceInvitation { background-color: transparent; max-width: 290px; max-height: 210px; -webkit-box-shadow: 0 7px 12px rgba(0,0,0,0.28); -moz-box-shadow: 0 7px 12px rgba(0,0,0,0.28); box-shadow: 0 7px 12px rgba(0,0,0,0.28); }
+    @media only screen and (min-width: 48em) { /*mobile*/ .embeddedServiceInvitation { max-width: 332px; max-height: 210px; } }
+    .embeddedServiceInvitation > .embeddedServiceInvitationHeader { width: inherit; height: 32px; line-height: 32px; padding: 10px; color: #FFFFFF; background-color: #222222; overflow: initial; display: flex; justify-content: space-between; align-items: stretch; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+    .embeddedServiceInvitationHeader #embeddedServiceAvatar { width: 32px; height: 32px; border-radius: 50%; }
+    .embeddedServiceInvitationHeader .embeddedServiceTitleText { font-size: 18px; color: #FFFFFF; overflow: hidden; word-wrap: normal; white-space: nowrap; text-overflow: ellipsis; align-self: stretch; flex-grow: 1; max-width: 100%; margin: 0 12px; }
+    .embeddedServiceInvitationHeader .embeddedServiceCloseIcon { border: none; border-radius: 3px; cursor: pointer; position: relative; bottom: 3%; background-color: transparent; width: 32px; height: 32px; font-size: 23px; color: #FFFFFF; }
+    .embeddedServiceInvitationHeader .embeddedServiceCloseIcon:focus { outline: none; }
+    .embeddedServiceInvitationHeader .embeddedServiceCloseIcon:focus::before { content: " "; position: absolute; top: 11%; left: 7%; width: 85%; height: 85%; background-color: rgba(255, 255, 255, 0.2); border-radius: 4px; pointer-events: none; }
+    .embeddedServiceInvitationHeader .embeddedServiceCloseIcon:active, .embeddedServiceCloseIcon:hover { background-color: #FFFFFF; color: rgba(0,0,0,0.7); opacity: 0.7; }
+    .embeddedServiceInvitation > .embeddedServiceInvitationBody { background-color: #FFFFFF; max-height: 110px; min-width: 260px; margin: 0 8px; font-size: 14px; line-height: 20px; overflow: auto; }
+    .embeddedServiceInvitationBody p { color: #333333; padding: 8px; margin: 12px 0; }
+    .embeddedServiceInvitation > .embeddedServiceInvitationFooter { width: inherit; color: #FFFFFF; text-align: right; background-color: #FFFFFF; padding: 10px; max-height: 50px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+    .embeddedServiceInvitationFooter > .embeddedServiceActionButton { font-size: 14px; max-height: 40px; border: none; border-radius: 4px; padding: 10px; margin: 4px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer; }
+    .embeddedServiceInvitationFooter > #acceptInvite { background-color: #005290; color: #FFFFFF; }
+    .embeddedServiceInvitationFooter > #rejectInvite { background-color: #FFFFFF; color: #005290; }
+</style>
+
+<script type='text/javascript'>
+    (function() {
+        document.getElementById('closeInvite').onclick = function() { embedded_svc.inviteAPI.inviteButton.rejectInvite(); };
+        document.getElementById('rejectInvite').onclick = function() { embedded_svc.inviteAPI.inviteButton.rejectInvite(); }; // use this API call to reject invitations
+        document.getElementById('acceptInvite').onclick = function() { embedded_svc.inviteAPI.inviteButton.acceptInvite(); }; // use this API call to start chat from invitations
+        document.addEventListener('keyup', function(event) { if (event.keyCode == 27) { embedded_svc.inviteAPI.inviteButton.rejectInvite(); }})
+    })();
+</script> -->
+
+<!-- End of Invitations -->
+
+<!-- <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+        embedded_svc.settings.defaultMinimizedText = 'Chat'; //(Defaults to Chat with an Expert)
+        embedded_svc.settings.disabledMinimizedText = 'Offline'; //(Defaults to Agent Offline)
+
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+        // Settings for Live Agent
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.init(
+            'https://na49.salesforce.com',
+            'https://miladin-developer-edition.na49.force.com/chat',
+            gslbBaseURL,
+            '00D5A0000016ziV',
+            'SnapChat',
+            {
+                baseLiveAgentContentURL: 'https://c.la1-c2-iad.salesforceliveagent.com/content',
+                deploymentId: '5725A000000gVNz',
+                buttonId: '5735A000000khjv',
+                baseLiveAgentURL: 'https://d.la1-c2-iad.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5A0000008R0jUAE_166f85a28ae',
+                isOfflineSupportEnabled: false
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://na49.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+</script> -->
+
+
+
+
+<!-- ****************************************************** BUTTON CHAT ********************************************************* -->
+
+
+
+
+<!--
+<script type='text/javascript' src='https://c.la1-c2-iad.salesforceliveagent.com/content/g/js/44.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la1-c2-iad.salesforceliveagent.com/chat', '5725A000000gVNz', '00D5A0000016ziV');
+</script>
+ 
+<style type='text/css'>
+.dugme_online{
+    background: #88c651;
+    height: 50px;
+    width: 200px;
+    display: block;
+}
+
+.dugme_onffine{
+    background: red;
+    height: 50px;
+    width: 200px;
+    display: block;
+}
+
+</style>
+
+<a id="liveagent_button_online_5735A000000khky" class="dugme_online" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5735A000000khky')">ONLINE</a>
+<div id="liveagent_button_offline_5735A000000khky" class="dugme_onffine" style="display: none;">OFFLINE</div>
+
+
+<script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('5735A000000khky', document.getElementById('liveagent_button_online_5735A000000khky'));
+liveagent.showWhenOffline('5735A000000khky', document.getElementById('liveagent_button_offline_5735A000000khky'));
+});
+</script> -->
+
+
+
+
+<!-- ****************************************************** UTMs ********************************************************* -->
+
+<!-- <style>
+
+#utm {
+
+    height: 300px;
+    margin: 80px;
+
+}
+
+div#utm a{
+	font-size: 2em;
+	color: white;
+	padding: 20px;
+	text-decoration: none;
+}
+
+#\31 {
+	background: #f52f2f;
+	border: 10px solid #e32d2d;
+}
+
+#\32 {
+	background: #2fc4f5;
+	border: 10px solid #2cb7e4;
+}
+
+#\33 {
+	background: #f5d72f;
+	border: 10px solid #e9c607;
+}
+
+#\34 {
+	background: #5ee172;
+	border: 10px solid #4fd263;
+}
+</style>
+
+<div id="utm">
+
+<a id="1" href="https://miladin-developer-edition.na49.force.com/chat?utm_source=salesforce&utm_medium=1&utm_campaign=test&utm_term=campaignterm1&utm_content=campaigncontent1">1</a>
+
+<a id="2" href="https://miladin-developer-edition.na49.force.com/chat?utm_source=salesforce&utm_medium=2&utm_campaign=test&utm_term=campaignterm2&utm_content=campaigncontent2">2</a>
+
+<a id="3" href="https://miladin-developer-edition.na49.force.com/chat?utm_source=salesforce&utm_medium=3&utm_campaign=test&utm_term=campaignterm3&utm_content=campaigncontent3">3</a>
+
+<a id="4" href="https://miladin-developer-edition.na49.force.com/chat?utm_source=salesforce&utm_medium=4&utm_campaign=test&utm_term=campaignterm4&utm_content=campaigncontent4">4</a>
+
+</div> -->
+	
+	
+	
+
+
+<!-- ****************************************************** UTMs ********************************************************* -->
+
+
+
+
+<!-- ****************************************************** LIVE AGENT AUTOMATED CHAT ********************************************************* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='https://c.la1-c2-iad.salesforceliveagent.com/content/g/js/44.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la1-c2-iad.salesforceliveagent.com/chat', '5725A000000gVNz', '00D5A0000016ziV');
+</script>
+
+<!-- <script type='text/javascript' src='https://miladin-developer-edition.na49.force.com/chat/jslibrary/1538677104000/ui-sfdc-javascript-impl/SfdcCore.js'></script>
+<script type='text/javascript' src='https://c.la1-c2-iad.salesforceliveagent.com/content/g/js/44.0/chasitor.js'></script>
+<script type='text/javascript' src='https://miladin-developer-edition.na49.force.com/chat/jslibrary/1539442786000/liveagent/LiveAgentChatWindow.js'></script> -->
+
+<script type="text/javascript">
+/* Sets the width of the chat window to 300px */
+	liveagent.setChatWindowWidth(300);
+
+/* Sets the height of the chat window to 450px */
+	liveagent.setChatWindowHeight(400);
+
+// Let's say there is data available in JavaScript that you want to use in a custom sending rule.
+	var shoppingCartValue = 123.45;
+// To pass this data so it can be used in Sending Rules in Salesforce setup, call setCustomVariable.
+	liveagent.setCustomVariable('shoppingCartValue', shoppingCartValue);
+
+// Enable Live Agent advanced logging to be available through the Browser's Developer Console 
+	liveagent.enableLogging();
+	
+// {YOUR_CUSTOM_CALLBACK_METHOD} is a JavaScript method you define to customize how the invitation behaves when users interact with it.	
+// Creates the callback function used for the Live Agent chat invitation to present it or not based on availability and the customer's interaction with it 
+
+	function buttonCallback(e) {
+	
+	// When the chat invitation is online (i.e. at least one available, skilled agent), display it at position
+	if (e == liveagent.BUTTON_EVENT.BUTTON_AVAILABLE) {
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.display = '';
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.top = 'auto';
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.left = '10px';
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.right = '10px';
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.bottom = '90px';
+	}
+	
+	// When the chat invitation is offline, don't display it 
+	if (e == liveagent.BUTTON_EVENT.BUTTON_UNAVAILABLE) {
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.display = 'none';
+	}
+	
+	// When the chat invitation is accepted, stop displaying it 		
+	if (e == liveagent.BUTTON_EVENT.BUTTON_ACCEPTED) {
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.display = 'none';
+	}
+	
+	// When the chat invitation is rejected, stop displaying it 		
+	if (e == liveagent.BUTTON_EVENT.BUTTON_REJECTED) {
+	document.getElementById('liveagent_invite_button_5735A000000khl3').style.display = 'none';
+	}
+}
+	
+	
+	liveagent.addButtonEventHandler('5735A000000khl3', buttonCallback);
+	
+	
+</script>
+
+
+<style>
+html{
+background: #a8adc3;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button3 {
+  background-color: #555;
+  background: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  left: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup3 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9;
+  background: #181f29;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 0px 9px #243a5161;
+  border: none;
+}
+
+/* Add styles to the form container */
+.form-container3 {
+  padding: 0px;
+  background-color: #181f29;
+  border-radius: 10px;
+}
+
+/* Full-width textarea */
+.form-container3 textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container3 textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container3 .btn3 {
+    color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    padding: 21px;
+    margin: 0;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container3 .cancel3 {
+  background: #0e0e0e;
+  background-color: #0e0e0e;
+  background-image: url('https://img.icons8.com/small/50/FFFFFF/close-window.png');
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display:none;
+}
+.form-container3 .cancel3:hover{
+	background-color: #f05353;
+}
+
+/* Add some hover effects to buttons */
+.form-container3 .btn3:hover3, .open-button3:hover {
+  opacity: 1;
+}
+object#chat3 {
+    border-radius: 0px;
+}
+
+#liveagent_invite_button_5735A000000khl3{
+position: fixed; 
+z-index: 10000; 
+border-radius: 5px; 
+background-color: rgb(0, 153, 230); 
+height: 0px; 
+width: 0px; 
+left: -1000px; 
+top: -1000px;
+width:0px;
+}
+
+
+
+
+.btn-minimize {
+    width: 50px;
+    height: 54px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    padding: 21px;
+    margin: 0;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 48px;
+    border-radius: 0px;
+    background: #0e0e0e;
+    background-color: #0e0e0e;
+    background-image: url(https://img.icons8.com/small/50/FFFFFF/minimize-window.png);
+    background-size: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:none;
+}
+
+.btn-minimize:hover{
+    background-color: #53a7f0;
+}
+.btn-minimize:focus{
+	outline:0;
+}
+.cancel3:focus{
+	outline:0;
+}
+
+.btn-minimize:hover{
+	background-position: center;
+}
+.btn-plus {
+    background-image: url(https://img.icons8.com/small/50/FFFFFF/maximize-window.png) !important;
+}
+.changeHeight{
+	height: 30px;
+}
+
+
+
+
+
+</style>
+
+
+<!-- For this usage, the "Animation" type of this invitation should be set to "Custom", otherwise two invitations will appear (the Salesforce-provided one and this custom one). -->
+<div id="liveagent_invite_button_5735A000000khl3" style="position: fixed; width:0px; left: -1000px; top: -1000px; z-index: 10000;"></div>
+	
+<div class="chat-popup3" id="myForm3">
+
+<form action="" class="form-container3">
+
+<!-- <textarea placeholder="Type message.." name="msg" required></textarea> -->
+
+
+
+
+<button type="button" class="btn-minimize"></button>
+
+
+
+
+<button type="button" class="btn3 cancel3" onclick="closeForm3();liveagent.rejectChat('5735A000000khl3')">x</button>
+
+<div id="object-parent3">
+<!--Here goes dynamicaly created object-->
+</div>       
+
+
+</form>
+
+</div>	
+
+
+<!-- <script>
+function myFunction() {
+   var element1 = document.getElementById("object-parent3");
+   element1.classList.toggle("changeHeight");
+}
+</script> -->
+
+
+
+<script>
+//minimize function
+$(document).ready(function(){
+
+$(".btn-minimize").click(function() {
+    $("#object-parent3").toggleClass("changeHeight");
+    $(".btn-minimize").toggleClass("btn-plus");
+});
+
+});
+</script>
+
+
+
+
+
+
+<script>
+			
+			function openForm3() {
+			    document.getElementById("myForm3").style.display = "block";
+			    document.getElementsByClassName("cancel3")[0].style.display = "block";
+			    document.getElementsByClassName("btn-minimize")[0].style.display = "block";
+			
+			    // Adds an element to the document
+			    var p = document.getElementById("object-parent3");
+			    var newElement = document.createElement("object");
+			    newElement.setAttribute('id', "chat3");
+			    newElement.setAttribute('width', "380");
+			    newElement.setAttribute('height', "600");
+			    newElement.setAttribute('data', "https://miladin-developer-edition.na49.force.com/chat/apex/CustomChatPage?language=en_US&org_id=00D5A0000016ziV&deployment_id=5725A000000gVNz&#deployment_id=5725A000000gVNz&org_id=00D5A0000016ziV&&button_id=5735A000000khl3");
+			    newElement.innerHTML = "html";
+			    p.appendChild(newElement);
+			}
+			
+			function closeForm3() {
+			    document.getElementById("myForm3").style.display = "none";
+			    document.getElementsByClassName("cancel3")[0].style.display = "none";
+			    document.getElementsByClassName("btn-minimize")[0].style.display = "none";
+			
+			    // Removes an element from the document
+			    var element = document.getElementById("chat3");
+			    element.parentNode.removeChild(element);
+			
+			}
+</script>
+
+<script>
+
+</script>
+
+<script>
+
+var observer = new MutationObserver(styleChangedCallback);
+observer.observe(document.getElementById('liveagent_invite_button_5735A000000khl3'), {
+    attributes: true,
+    attributeFilter: ['style'],
+});
+
+var oldTop = document.getElementById('liveagent_invite_button_5735A000000khl3').style.top;
+
+function styleChangedCallback(mutations, observer) {
+    var newTop = mutations[1].target.style.top;
+    if (newTop !== oldTop) {
+        console.log('new:', newTop, 'old:', oldTop);
+        openForm3();
+        observer.disconnect();
+    }
+}
+</script>
+
+	
+<!-- <script>
+
+$(document).ready(function () {
+    var colorsArr = ['red', 'orange', 'gray', 'black', 'blue', 'yellow'];
+    $('#btnChangeBackgroundColor').on('click', function () {
+    var xColor = colorsArr.shift();
+    colorsArr.push(xColor);
+
+    $('.name').css('background-color', xColor);
+  });
+
+    $('.name').attr('data-originalstyle', $('.name').attr('style'));
+
+  checkIfStyleChanged();
+});
+
+function checkIfStyleChanged() {
+    if ($('.name').attr('data-originalstyle') != $('.name').attr('style')) {
+   $('.name').attr('data-originalstyle', $('.name').attr('style'));
+
+    $('#lblChanged').html('The Style Changed');
+    $('#lblChanged').css('display', '');
+
+    setTimeout(function () {
+        $('#lblChanged').fadeOut('slow');
+    }, 1500);    
+  }
+
+  setTimeout(function () {
+        checkIfStyleChanged();
+    }, 50); 
+}
+</script> -->
+
+<!-- <script>
+var observer = new MutationObserver(styleChangedCallback);
+observer.observe(document.getElementById('liveagent_invite_button_5735A000000khl3'), {
+    attributes: true,
+    attributeFilter: ['style'],
+});
+
+var oldTop = document.getElementById('liveagent_invite_button_5735A000000khl3').style.top;
+
+function styleChangedCallback(mutations) {
+    var newTop = mutations[0].target.style.top;
+    if (newTop !== oldTop) {
+        console.log('new:','old:', oldTop);
+    }
+}
+</script> -->
+
+<!-- <script>
+var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+
+var element = document.querySelector('#liveagent_invite_button_5735A000000khl3');
+
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.type == "attributes") {
+      console.log("attributes changed")
+    }
+  });
+});
+
+observer.observe(element, {
+  attributes: true //configure it to listen to attribute changes
+});
+</script> -->
+
+<!-- <script>
+var change = document.getElementById('liveagent_invite_button_5735A000000khl3');
+var a =
+var observer = new MutationObserver(function(mutations) {
+  console.log('style changed');
+});
+
+observer.observe(change, { 
+  attributes: true, 
+  attributeFilter: ['style'] 
+  });
+</script> -->
+
+<!-- <script>
+// Select the node that will be observed for mutations
+var targetNode = document.getElementById('liveagent_invite_button_5735A000000khl3');
+
+// Options for the observer (which mutations to observe)
+var config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+var callback = function(mutationsList, observer) {
+    for(var mutation of mutationsList) {
+        
+        if (mutation.type == 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
+
+// Create an observer instance linked to the callback function
+var observer = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
+</script> -->
+
+<!-- <script>
+var mutationObserver = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation);
+  });
+});
+
+// Starts listening for changes in the root HTML element of the page.
+mutationObserver.observe(document.getElementById('liveagent_invite_button_5735A000000khl3'), {
+  attributes: true,
+  characterData: true,
+  childList: true,
+  subtree: true,
+  attributeOldValue: true,
+  characterDataOldValue: true
+});
+</script> -->
+
+<!-- <script>
+var mutationObserver = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation);
+  });
+});
+
+// Starts listening for changes in the root HTML element of the page.
+mutationObserver.observe(document.getElementById('liveagent_invite_button_5735A000000khl3'), {
+  attributes: true,
+  characterData: true,
+  childList: true,
+  subtree: true,
+  attributeOldValue: true,
+  characterDataOldValue: true
+});
+<script>-->
+
+
+<!-- <script>
+// Blocker is the element that has a changing display value
+var blocker  = document.querySelector( '#liveagent_invite_button_5735A000000khl3' );
+
+// Our mutation observer, which we attach to blocker later
+var observer = new MutationObserver( function( mutation){
+    
+        // Was it the style attribute that changed? (Maybe a classname or other attribute change could do this too? You might want to remove the attribute condition) Is display set to 'none'?
+        if(mutation.attributeName === 'style' && window.getComputedStyle( blocker ).getPropertyValue( 'animation-name' ) !== 'slide5735A000000khl3'
+          ){
+            openForm3(); 
+        }
+    
+} );
+
+// Attach the mutation observer to blocker, and only when attribute values change
+observer.observe( blocker, { attributes: true } );
+
+
+
+// Takes all changes which haven’t been fired so far.
+var changes = observer.takeRecords();
+
+// Stops the MutationObserver from listening for changes.
+//observer.disconnect();
+</script> -->
+
+<!-- <script>
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log('Mutation type: ' + mutation.type);
+    if ( mutation.type == 'childList' ) {
+      if (mutation.addedNodes.length >= 1) {
+        if (mutation.addedNodes[0].nodeName != '#text') {
+           console.log('Added ' + mutation.addedNodes[0].tagName + ' tag.');
+        }
+      }
+      else if (mutation.removedNodes.length >= 1) {
+        console.log('Removed ' + mutation.removedNodes[0].tagName + ' tag.')
+      }
+    }
+    else if (mutation.type == 'attributes') {
+      console.log('Modified ' + mutation.attributeName + ' attribute.')
+    }
+        });   
+});
+  
+var observerConfig = {
+        attributes: true,
+        childList: true,
+        characterData: true
+};
+  
+// Listen to all changes to body and child nodes
+var targetNode = document.querySelector('#liveagent_invite_button_5735A000000khl3');
+observer.observe(targetNode, observerConfig);
+
+</script> -->
+
+<!-- <script>
+if ($('#liveagent_invite_button_5735A000000khl3').animation-name == 'slide5735A000000khl3') { 
+    openForm3();
+}
+</script> -->
+<!-- <script>
+
+
+if( $('#liveagent_invite_button_5735A000000khl3').css('animation-name') == 'slide5735A000000khl3' )  { 
+   return openForm3();
+} 
+</script> -->
+
+
+
+
+
+<!-- ****************************************************** OTHER AUTOMATED CHAT ********************************************************* -->
+
+
+
+
+
+	
+<!-- 	
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  background: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+  background: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+
+  <form action="/action_page.php" class="form-container">
+
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <div id="object-parent">
+      <object id="chat" data="https://wwwdev.intertrader.com/eu/" width="400" height="300">
+            Chat not available.
+        </object>
+    </div>       
+
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+
+</div>
+
+
+
+<script>
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+
+    // Adds an element to the document
+    var p = document.getElementById("object-parent");
+    var newElement = document.createElement("object");
+    newElement.setAttribute('id', "chat");
+    newElement.setAttribute('width', "280");
+    newElement.setAttribute('height', "300");
+    newElement.setAttribute('data', "https://miladin-developer-edition.na49.force.com/chat/apex/PreChat?endpoint=https%3A%2F%2Fy3i.la1-c2-iad.salesforceliveagent.com%2Fcontent%2Fs%2Fchat%3Flanguage%3Den_US%26org_id%3D00D5A0000016ziV%26deployment_id%3D5725A000000gVNz%26sid%3Dcb75657e-a984-4240-bbfd-b0f81701caa2%23deployment_id%3D5725A000000gVNz%26org_id%3D00D5A0000016ziV%26button_id%3D5735A000000khl3%26session_id%3Dcb75657e-a984-4240-bbfd-b0f81701caa2");
+    newElement.innerHTML = "html";
+    p.appendChild(newElement);
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+
+    // Removes an element from the document
+    var element = document.getElementById("chat");
+    element.parentNode.removeChild(element);
+
+}
+</script>
+
+<script> 
+var previousOnload = window.onload;
+ window.onload = function() { 
+ 	if (previousOnload) { 
+ 		previousOnload(); 
+ 	} 
+ 	openForm(); 
+ 	} 
+</script>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button2 {
+  background-color: #555;
+  background: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 340px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup2 {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 340px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container2 {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container2 textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container2 textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container2 .btn2 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container2 .cancel {
+  background-color: red;
+  background: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container2 .btn2:hover, .open-button2:hover {
+  opacity: 1;
+}
+</style>
+
+<button class="open-button2" onclick="openForm2()">Chat</button>
+
+<div class="chat-popup2" id="myForm2">
+
+  <form action="/action_page.php" class="form-container2">
+
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <div id="object-parent2">
+      <object id="chat" data="https://wwwdev.intertrader.com/eu/" width="400" height="300">
+            Chat not available.
+        </object>
+    </div>       
+
+    <button type="button" class="btn cancel2" onclick="closeForm2()">Close</button>
+  </form>
+
+</div>
+
+
+<script>
+function openForm2() {
+    document.getElementById("myForm2").style.display = "block";
+
+    // Adds an element to the document
+    var p = document.getElementById("object-parent2");
+    var newElement = document.createElement("object");
+    newElement.setAttribute('id', "chat2");
+    newElement.setAttribute('width', "280");
+    newElement.setAttribute('height', "300");
+    newElement.setAttribute('data', "https://y3i.la1-c2-iad.salesforceliveagent.com/content/s/chat?language=en_US&org_id=00D5A0000016ziV&deployment_id=5725A000000gVNz&sid=cb75657e-a984-4240-bbfd-b0f81701caa2#deployment_id=5725A000000gVNz&org_id=00D5A0000016ziV&button_id=5735A000000khl3&session_id=cb75657e-a984-4240-bbfd-b0f81701caa2");
+    newElement.innerHTML = "html";
+    p.appendChild(newElement);
+}
+
+function closeForm2() {
+    document.getElementById("myForm2").style.display = "none";
+
+    // Removes an element from the document
+    var element = document.getElementById("chat2");
+    element.parentNode.removeChild(element);
+
+}
+</script> -->
+
+<!--<object id="chat" data="https://miladin-developer-edition.na49.force.com/chat/apex/PreChat?endpoint=https%3A%2F%2Fy3i.la1-c2-iad.salesforceliveagent.com%2Fcontent%2Fs%2Fchat%3Flanguage%3Den_US%26org_id%3D00D5A0000016ziV%26deployment_id%3D5725A000000gVNz%26sid%3Dcb75657e-a984-4240-bbfd-b0f81701caa2%23deployment_id%3D5725A000000gVNz%26org_id%3D00D5A0000016ziV%26button_id%3D5735A000000khl3%26session_id%3Dcb75657e-a984-4240-bbfd-b0f81701caa2" width="400" height="300" type="text/html">
+   	Chat not available.
+</object>-->
+
+
+<!-- <div id="liveagent_invite_button_5735A000000khl3" style="display:none;"><span style="cursor: pointer; width: 100px; height: 20px; padding: 5px;" onclick="liveagent.startChat('5735A000000khl3')">Start Chat</span>
+<span style="cursor: pointer; width: 100px; height: 20px; padding: 5px;" onclick="liveagent.rejectChat('5735A000000khl3')">Reject Chat</span>
+</div> -->
+
+</body>
+
+</html>
+
+</apex:page>

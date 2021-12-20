@@ -1,0 +1,39 @@
+.THIS {
+	position: fixed;
+	left: auto;
+	bottom: 0;
+	right: 12px;
+	margin: 0;
+ 	min-width: 12em;
+	max-width: 14em;
+	height: 46px;
+	width: 192px;
+	max-height: 100%;
+	border-radius: 8px 8px 0 0;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	flex-direction: center;
+justify-content: center;
+box-shadow: none;
+	pointer-events: all;
+	overflow: hidden;
+	background-color: rgb(0, 112, 210);
+	font-size: 16px;
+}
+
+.THIS.minimizedContainer:focus,
+.THIS.minimizedContainer:hover {
+color: rgb(255, 255, 255);
+text-decoration: underline;
+outline: none;
+background-color: rgb(0, 95, 178);
+box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+}
+
+.THIS .messageContent {
+	display: block;
+	padding: 0 8px;
+	height: 100%;
+	color: rgb(255, 255, 255);
+}

@@ -1,0 +1,364 @@
+<apex:page showHeader="false">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+//restrict only space characters
+	$('.liveAgentChatInput').on('keypress', function(e) {
+	console.log( e.which );
+	    if($('.liveAgentChatInput').val().length == 0){
+	        var k = e.which;
+	        var ok = k >= 65 && k <= 90 || // A-Z
+	            k >= 97 && k <= 122 || // a-z
+	            k >= 48 && k <= 57; // 0-9
+	        
+	        if (!ok){
+	            e.preventDefault();
+	        }
+	    }
+	}); 
+
+//placeholder and max length settings
+  $(".liveAgentChatInput").attr("placeholder", "Enter your question here");  
+  $(".liveAgentChatInput").attr("maxlength", "255"); 
+  
+//no more than 5 submits per 10 seconds  
+	var timesSubmitted = 0;
+	var maxSubmits = 5;
+	var intervalMilliseconds = 15000; // for testing   
+	var interval; 
+
+//no more than 5 submits per 10 seconds - input	
+	$("input#liveAgentChatInput").on("keypress", function(event){
+	
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	
+	if(keycode == '13'){
+		console.log('***ENTER***');	
+	
+  	if (!interval){  	
+		interval = setTimeout(function(){
+			interval = undefined;
+			timesSubmitted = 0;
+			$("#validation").empty();
+			$(".liveAgentSendButton").prop( "disabled", false );
+			$(".liveAgentChatInput").prop( "disabled", false );		
+			$("#validation").css("display", "none"); 	
+		}, intervalMilliseconds);
+	}
+	timesSubmitted ++;
+	
+	if (timesSubmitted > maxSubmits) {
+		$(".liveAgentSendButton").prop( "disabled", true );
+		$(".liveAgentChatInput").prop( "disabled", true );			
+		$("#validation").append('Message sending failed. You can send 5 messages per 10 seconds. If you need to tell us more please email us at: support@intertrader.com or call us at: +44 203364 5187<br />');
+		$("#validation").css("display", "block");
+	} else {
+	    
+	}
+	}	   
+	}); 	
+
+
+//no more than 5 submits per 10 seconds - submit	
+	$("button.liveAgentChatElement.liveAgentSendButton").on("click", function(event){
+	
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+	
+	if(event.type === 'click'){
+		console.log('***CLICK***');	
+	
+  	if (!interval){  	
+		interval = setTimeout(function(){
+			interval = undefined;
+			timesSubmitted = 0;
+			$("#validation").empty();
+			$(".liveAgentSendButton").prop( "disabled", false );
+			$(".liveAgentChatInput").prop( "disabled", false );		
+			$("#validation").css("display", "none"); 	
+		}, intervalMilliseconds);
+	}
+	timesSubmitted ++;
+	
+	if (timesSubmitted > maxSubmits) {
+		$(".liveAgentSendButton").prop( "disabled", true );
+		$(".liveAgentChatInput").prop( "disabled", true );			
+		$("#validation").append('Message sending failed. You can send 5 messages per 10 seconds. If you need to tell us more please email us at: support@intertrader.com or call us at: +44 203364 5187<br />');
+		$("#validation").css("display", "block");
+	} else {
+	    
+	}
+	}	   
+	}); 	
+});
+</script>
+
+<style>
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+#liveAgentClientChat.liveAgentStateWaiting {
+// The CSS class that is applied when the chat request is waiting to be accepted
+// See "Waiting State" screenshot below
+}
+#liveAgentClientChat {
+// The CSS class that is applied when the chat is currently engaged
+// See "Engaged State" screenshot below
+}
+#liveAgentClientChat.liveAgentStateEnded {
+// The CSS class that is applied when the chat has ended
+// See "Ended State" screenshot below
+}
+body { font-size:15px; overflow: hidden; width: 100%; height: 100%; padding: 0; margin: 0 }
+#waitingMessage { height: 100%; width: 100%; vertical-align: middle; text-align: center;
+display: none; }
+#liveAgentClientChat.liveAgentStateWaiting #waitingMessage { display: table; }
+#liveAgentSaveButton, #liveAgentEndButton { z-index: 2; }
+.liveAgentChatInput {
+background: #ffffff;
+display: block;
+width: 97%;
+border: none;
+margin: 0;
+padding: 20px;
+border-radius:0px;
+font-size:15px;
+}
+.liveAgentSendButton {
+display: block;
+position: absolute;
+top: 0;
+right: -67px;
+color: #16212c00;
+border: none;
+cursor: pointer;
+padding: 21px;
+margin: 0;
+background-color:white;
+background-image: url('https://img.icons8.com/windows/50/757575/paper-plane.png');
+background-size: 25px;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 0px;
+width: 50px;
+}
+.liveAgentSendButton:hover{
+	background-position: center;
+}
+#liveAgentChatLog {
+width: auto;
+height: auto;
+top: 29px;
+position: absolute;
+overflow-y: auto;
+left: 0;
+right: 0;
+bottom: 33px;
+background: #f5f5f5;
+border:none;
+}
+div#liveAgentChatLogText {
+    padding: 0px;
+}
+button#liveAgentSaveButton {
+    color: #ffffff00;
+    background: #0e0e0e;
+    background-image: url(https://img.icons8.com/ios/50/FFFFFF/installing-updates-filled.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 54px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    padding: 21px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    border-radius: 0;
+    right: 98px;
+    z-index: 1;
+}
+button#liveAgentSaveButton:hover{
+	background-color: #53a7f0;
+}
+button.liveAgentChatElement.liveAgentEndButton:hover{
+	background-color: #53a7f0;
+}
+button.liveAgentChatElement.liveAgentEndButton {
+    color: #ffffff00;
+    background: #0e0e0e;
+    background-image: url(https://img.icons8.com/small/50/FFFFFF/exit.png);
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 54px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    padding: 21px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    border-radius: 0;
+    float: right;
+    right: 148px;
+    z-index: 1;
+}
+span.operator {
+    text-align: left;
+    float: left;
+    clear: both;
+    margin: 10px;
+    padding: 20px;
+    background: #53a6ee;
+    color: white;
+    border-radius: 0px 10px 10px 10px;
+}
+span.client {
+    text-align: left;
+    float: right;
+    clear: both;
+    margin: 10px;
+    padding: 20px;
+    background: #0e0e0e;
+    color: white;
+    border-radius: 10px 0px 10px 10px;
+}
+#liveAgentChatLogText .name {
+    display: none;
+    white-space: normal;
+}
+#liveAgentChatLogText span {
+    display: table;
+    word-break: break-all;
+}
+#liveAgentChatLogText span a{
+	color:white;
+}
+#liveAgentChatLogText span a:hover{
+	color:#d3e9ff;
+}
+*:focus {
+    outline: none;
+}
+span#liveAgentChatLogTyping {
+    position: relative;
+    margin-top: 10px;
+    background: #e0e0e0;
+    color: #16212c;
+}
+/* width */
+::-webkit-scrollbar {
+    display:none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+#intertrader-logo{
+	background:#0E0E0E;
+}
+
+#intertrader-logo img{
+	border: 0;
+    height: 22px;
+    padding: 16px;
+}
+div#validation {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    background: #019ff0;
+    height: 70px;
+    color: white;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.liveAgentStateIdleAlert #liveAgentChatLogAlertMessage{
+	position:absolute;
+	bottom:74px;
+	z-index:90;
+	padding:30px;
+}
+
+span.client + span {
+    text-align: right;
+    float: right;
+    clear: both;
+    margin: 10px;
+    color: #888888;
+    font-size: 13px;
+}
+
+span.operator + span {
+    text-align: left;
+    float: left;
+    clear: both;
+    margin: 10px;
+    color: #888888;
+    font-size: 13px;
+}
+
+span.system {
+    position: relative;
+    clear: both;
+    bottom: 0px;
+    background: #019fff;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    float: left;
+    width: 320px;
+}
+</style>
+<div style="top: 0; left: 0; right: 0; bottom: 0; position: absolute;background: #ffffff;">
+
+<liveAgent:clientChat >
+<div id="intertrader-logo">
+<apex:image id="intertrader-logo" value="https://www.intertrader.com/eu/wp-content/uploads/2017/11/intertrader-logo-white-optimize.png" alt="Intertrader"/>
+
+</div>
+<div id="validation"></div>
+<liveAgent:clientChatSaveButton />
+<liveAgent:clientChatEndButton />
+<div style="top: 25px; left: 0px; right: 0px; bottom: 5px; position: absolute; z-index:
+0;">
+<liveAgent:clientChatAlertMessage />
+<liveAgent:clientChatStatusMessage />
+<table id="waitingMessage" cellpadding="0" cellspacing="0">
+<tr>
+<td>Please wait while you are connected to an available agent.</td>
+</tr>
+</table>
+<liveAgent:clientChatLogAlertMessage />
+<div style="top: 0; right: 0; bottom: 41px; left: 0; padding: 0; position: absolute;
+word-wrap: break-word; z-index: 0;">
+<liveAgent:clientChatLog visitorNameLabel="Me" showTimeStamp="true"/>
+
+</div>
+<div style="position: absolute; height: auto; right: 0; bottom: 5px; left: 10px; margin-right:
+77px;">
+<liveagent:clientChatInput /><liveAgent:clientChatSendButton />
+</div>
+
+</div>
+</liveAgent:clientChat>
+</div>
+</apex:page>
