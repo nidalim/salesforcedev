@@ -1,3 +1,3 @@
 <aura:application >
-	<c:helloWorld/>
+	<c:campingListItem item="{!v.item}"/>
 </aura:application>
