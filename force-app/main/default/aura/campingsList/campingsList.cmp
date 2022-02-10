@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="campings" type="Camping_Item__c[]"/>
+    <lightning:card title="Campings">
+        <p class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.campings}" var="camping">
+                <c:campingItem item="{!camping}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+</aura:component>
