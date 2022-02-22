@@ -3,7 +3,7 @@
     <lightning:card title="Campings">
         <p class="slds-p-horizontal_small">
             <aura:iteration items="{!v.campings}" var="camping">
-                <c:campingItem item="{!camping}"/>
+                <c:expenseItem expense="{!camping}"/>
             </aura:iteration>
         </p>
     </lightning:card>

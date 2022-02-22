@@ -1,12 +1,13 @@
 ({
-    createItem: function(component, Item) {
-        let theItems = component.get("v.campingList");
-        // Copy the Item to a new object
-        // THIS IS A DISGUSTING, TEMPORARY HACK
-        let newItem = JSON.parse(JSON.stringify(Item));
-        console.log("Items before 'create': " + JSON.stringify(theItems));
-        theItems.push(newItem);
-        component.set("v.campingList", theItems);
-        console.log("Items after 'create': " + JSON.stringify(theItems));
-    }
+   addItem: function(component, item) {
+    this.saveItem(component, item, function(response){
+        var state = response.getState();
+        if (component.isValid() && state === "SUCCESS") {
+            // all good, nothing to do.
+         /*   var items = component.get("v.items");
+            items.push(response.getReturnValue());
+            component.set("v.items", items);*/
+        }
+    });
+},
 })

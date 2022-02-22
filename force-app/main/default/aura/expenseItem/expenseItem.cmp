@@ -2,6 +2,7 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="formatdate" type="Date"/>
     <aura:attribute name="expense" type="Expense__c"/>
+    <aura:registerEvent name="updateExpense" type="c:expensesItemUpdate"/>
     <lightning:card title="{!v.expense.Name}" iconName="standard:scan_card"
                     class="{!v.expense.Reimbursed__c ?
                            'slds-theme_success' : ''}">
