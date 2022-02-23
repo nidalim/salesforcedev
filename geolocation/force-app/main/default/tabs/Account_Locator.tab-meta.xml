@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <auraComponent>AccountLocator</auraComponent>
+    <description>Custom tab for Account Locator.</description>
+    <label>Account Locator</label>
+    <motif>Custom78: Map</motif>
+</CustomTab>
